@@ -1,3 +1,4 @@
+
 void removerrepeated(ll n)
 {
     stack<ll>s;
