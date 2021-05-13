@@ -10,7 +10,6 @@
  * };
  */
 
-
 vector<int> Solution::preorderTraversal(TreeNode *root)
 {
 
