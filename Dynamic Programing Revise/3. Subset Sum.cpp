@@ -9,8 +9,8 @@ using namespace std;
     cin.tie(NULL);              \
     cout.tie(NULL);
 
-int dp[1001][10001];
-int subsetSum(int n, int arr[], int sum)
+bool dp[1001][10001];
+bool subsetSum(int n, int arr[], int sum)
 {
     for (int i = 0; i <= n; i++)
         dp[i][0] = 1;
@@ -35,7 +35,7 @@ signed main()
     int arr[6] = {3, 34, 4, 12, 5, 2};
     int sum = 9;
     //memonization
-    memset(dp, -1, sizeof(dp));
+    memset(dp, 0, sizeof(dp));
 
     cout << subsetSum(n, arr, sum);
 
