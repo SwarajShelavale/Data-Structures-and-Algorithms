@@ -11,16 +11,8 @@ using namespace std;
 
 int dp[1001][10001];
 
-signed main()
+int knapsack(int n, int wt[], int val[], int W)
 {
-    fast;
-    int n = 3;
-    int wt[3] = {10, 20, 30};
-    int val[3] = {60, 100, 120};
-    int W = 50;
-    //memonization
-    memset(dp, -1, sizeof(dp));
-
     //Top down approch
     for (int i = 0; i <= n; i++)
         dp[i][0] = 0;
@@ -37,6 +29,18 @@ signed main()
                 dp[i][j] = dp[i - 1][j];
         }
     }
-    cout << dp[n][W];
+    return dp[n][W];
+}
+signed main()
+{
+    fast;
+    int n = 3;
+    int wt[3] = {10, 20, 30};
+    int val[3] = {60, 100, 120};
+    int W = 50;
+    //memonization
+    memset(dp, -1, sizeof(dp));
+
+    cout << knapsack(n, wt, val, W);
     return 0;
 }
