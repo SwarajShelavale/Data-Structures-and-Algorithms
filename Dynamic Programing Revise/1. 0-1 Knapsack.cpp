@@ -1,5 +1,5 @@
 /* Author : Swaraj Shelavale (errorless11) */
-/* 0-1 Knapsack Problem  - Bottom Up Aprroach */
+/* 0-1 Knapsack Problem  - Bottom Up Approach */
 
 #include <bits/stdc++.h>
 using namespace std;
