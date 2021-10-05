@@ -10,17 +10,8 @@ using namespace std;
     cout.tie(NULL);
 
 int dp[1001][10001];
-
-signed main()
+int subsetSum(int n, int arr[], int sum)
 {
-    fast;
-    int n = 6;
-    int arr[6] = {3, 34, 4, 12, 5, 2};
-    int sum = 9;
-    //memonization
-    memset(dp, -1, sizeof(dp));
-
-    //Top down approch
     for (int i = 0; i <= n; i++)
         dp[i][0] = 1;
     for (int i = 1; i <= sum; i++)
@@ -35,6 +26,18 @@ signed main()
                 dp[i][j] = dp[i - 1][j];
         }
     }
-    cout << dp[n][sum];
+    return dp[n][sum];
+}
+signed main()
+{
+    fast;
+    int n = 6;
+    int arr[6] = {3, 34, 4, 12, 5, 2};
+    int sum = 9;
+    //memonization
+    memset(dp, -1, sizeof(dp));
+
+    cout << subsetSum(n, arr, sum);
+
     return 0;
 }
