@@ -29,7 +29,7 @@ int MinSubseSumDiff(int n, int arr[], int sum)
 
     //Find the minimum diff for valid sum
     int diff = sum;
-    for (int i = 0; i < sum / 2; i++)
+    for (int i = 0; i <= sum / 2; i++)
     {
         if (dp[n][i] == 1)
             diff = min(diff, sum - 2 * i);
