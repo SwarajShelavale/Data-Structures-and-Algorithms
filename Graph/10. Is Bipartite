@@ -1,0 +1,32 @@
+ Leetcode: 785. Is Bipartite
+ https://leetcode.com/problems/is-graph-bipartite/
+ 
+ bool bipartite(int s,int color,vector<vector<int>>& graph,vector<int>&visited)
+    {
+        visited[s]=color;
+        for(int x:graph[s])
+        {
+            if(visited[x] == -1)
+            {
+                if( bipartite(x,1-color,graph,visited)==false )
+                        return false;
+            }
+            else if(visited[x]==visited[s])
+                return false;
+        }
+        return true;
+    }
+    bool isBipartite(vector<vector<int>>& graph) {
+        int n=graph.size();
+        vector<int>visited(n+1,-1);
+        for(int i=0;i<n;i++)
+        {
+            if(visited[i]==-1)
+            {
+                bool ans=bipartite(i,0,graph,visited);
+                if(ans==false)
+                    return false;
+            }
+        }
+        return true;
+    }
